@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/navBarLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/navBarInclude"
+            layout="@layout/toolbar"
+ />
+
+    </LinearLayout>
+
+<LinearLayout
+    android:id="@+id/linearSearchBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginVertical="10dp"
+    app:layout_constraintTop_toBottomOf="@id/navBarLinear"
+    >
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_weight="1"
+        android:autofillHints=""
+        android:background="@drawable/custom_search"
+        android:drawableStart="@drawable/search_"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:layout_marginHorizontal="12dp"
+        android:inputType="text"
+        android:padding="10dp"
+        android:hint="Search.."
+        android:textSize="11dp" />
+
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="10dp"
+        android:contentDescription="Filter Icon"
+        android:padding="2dp"
+        android:src="@drawable/filter_icon"
+
+        />
+
+
+</LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearSearchBar" />
+
+
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:iconSize="23dp"
+        app:textSize="14dp"
+        app:iconTint="@color/primaryColor"
+        app:iconTintActive="@color/primaryColor"
+        app:textColor="@color/primaryColor"
+        app:backgroundColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
